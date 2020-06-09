@@ -8,12 +8,19 @@ class Auth extends CI_Controller {
 		$this->load->library('form_validation');
 	}
 
+	public function login_panel(){
+		$this->form_validation->set_rules('uid','Uid','trim|required');
+		$this->form_validation->set_rules('pass','Pass','trim|required|min_length[6]');
+
+		$this->load->view('panel/login');
+	}
+
 	public function index(){
 		$this->form_validation->set_rules('uid','Uid','trim|required');
 		$this->form_validation->set_rules('pass','Pass','trim|required|min_length[6]');
 
 		if($this->form_validation->run() == FALSE){
-			$this->load->view('login');
+			$this->load->view('user/login');
 		}else{
 			$this->proses_('masuk');
 		}

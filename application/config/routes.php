@@ -53,6 +53,10 @@ $route['default_controller'] = 'Auth';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+// Panel Start
+$route['atur'] = 'Auth/login_panel';
+// Panel End
+
 $route['login'] = 'Auth/index';
 $route['register'] = 'Auth/register';
 $route['verify'] = 'Auth/konfirmasi';
